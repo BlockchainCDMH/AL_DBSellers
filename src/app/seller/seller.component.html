@@ -1,8 +1,13 @@
-<div class="card" style="width: 18rem;">
-    <img class="card-img-top" src="..." alt="Card image cap">
-    <div class="card-body">
-      <h5 class="card-title">Card title</h5>
-      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-      <a href="#" class="btn btn-primary">Go somewhere</a>
+<mat-list>
+  <mat-list-item *ngFor="let commerce of commerces">
+    <mat-icon mat-list-icon class="mat-list-icon">home</mat-icon>
+    <div mat-line>{{commerce.name}} </div>
+    <div mat-line>
+      <h3 matLine><small>{{commerce.owner}}</small></h3>
     </div>
-  </div>
+    <p matLine>
+      <span> </span>
+      <span class="demo-2"> </span>
+    </p>
+  </mat-list-item>
+</mat-list>

@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import * as Mapboxgl from 'mapbox-gl';
 import { environment } from 'src/environments/environment';
+import {CommercesService} from '../services/commerces.service';
+import { commerces } from 'src/shared/commerces';
 @Component({
   selector: 'app-dash-board',
   templateUrl: './dash-board.component.html',
@@ -8,8 +10,10 @@ import { environment } from 'src/environments/environment';
 })
 
 export class DashBoardComponent implements OnInit {
+  commerces: commerces[]
   map: Mapboxgl.map;
-  constructor() { }
+  commerce: commerces;
+  constructor(private commercesservices:CommercesService) { }
 
   ngOnInit(): void {
 
@@ -21,6 +25,17 @@ export class DashBoardComponent implements OnInit {
       zoom: 16 // starting zoom
       });
 
+      this.getCommerces();
+  }
+
+  
+  getCommerces() {
+    return this.commercesservices.getcommerces().subscribe(response => {
+      if (response !== null) {
+        this.commerces = response;
+        console.log(this.commerces);
+      }
+    })
   }
 
 }

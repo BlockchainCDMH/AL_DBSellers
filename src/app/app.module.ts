@@ -6,6 +6,11 @@ import { DashBoardComponent } from './dash-board/dash-board.component';
 import { SellerComponent } from './seller/seller.component';
 import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
+import { CommercesService } from './services/commerces.service';
+import { HttpClientModule }    from '@angular/common/http';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatListModule} from '@angular/material/list';
+import {MatIconModule} from '@angular/material/icon'; 
 
 @NgModule({
   declarations: [
@@ -16,9 +21,15 @@ import { HeaderComponent } from './header/header.component';
     HeaderComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    HttpClientModule,
+    BrowserAnimationsModule,
+    MatListModule,
+    MatIconModule
   ],
-  providers: [],
+  providers: [
+    CommercesService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
