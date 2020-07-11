@@ -33,9 +33,12 @@ export class DashBoardComponent implements OnInit {
     return this.commercesservices.getcommerces().subscribe(response => {
       if (response !== null) {
         this.commerces = response;
-        console.log(this.commerces);
       }
     })
+  }
+
+  newcommerce(id){
+    this.commerce=id;
   }
 
 }

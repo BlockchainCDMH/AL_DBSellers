@@ -1,13 +1,10 @@
-<mat-list>
-  <mat-list-item *ngFor="let commerce of commerces">
+<mat-selection-list [multiple]="false">
+  <mat-list-option  *ngFor="let commerce of commerces" (click)="cliked(commerce)">
     <mat-icon mat-list-icon class="mat-list-icon">home</mat-icon>
-    <div mat-line>{{commerce.name}} </div>
-    <div mat-line>
+    <div class="list-title" mat-line>{{commerce.name}} </div>
+    <div class="list-title" mat-line>
       <h3 matLine><small>{{commerce.owner}}</small></h3>
     </div>
-    <p matLine>
-      <span> </span>
-      <span class="demo-2"> </span>
-    </p>
-  </mat-list-item>
-</mat-list>
+  </mat-list-option>
+</mat-selection-list>
+

@@ -1,4 +1,4 @@
-import { Component, OnInit,Input } from '@angular/core';
+import { Component, EventEmitter, OnInit, Input, Output } from '@angular/core';
 import { commerces } from 'src/shared/commerces';
 
 @Component({
@@ -7,10 +7,15 @@ import { commerces } from 'src/shared/commerces';
   styleUrls: ['./seller.component.scss']
 })
 export class SellerComponent implements OnInit {
-  @Input() commerces: commerces;
+  @Input() commerces: commerces[];
+  @Output() newCommerceOutput = new EventEmitter<commerces>();
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  cliked(value: commerces) {
+    this.newCommerceOutput.emit(value);
   }
 
 }

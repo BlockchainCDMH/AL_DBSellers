@@ -11,6 +11,10 @@ import { HttpClientModule }    from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatListModule} from '@angular/material/list';
 import {MatIconModule} from '@angular/material/icon'; 
+import {MatButtonModule} from '@angular/material/button'; 
+import {MatCardModule} from '@angular/material/card'; 
+import {MatGridListModule} from '@angular/material/grid-list';
+import {MatTooltipModule} from '@angular/material/tooltip'; 
 
 @NgModule({
   declarations: [
@@ -25,7 +29,11 @@ import {MatIconModule} from '@angular/material/icon';
     HttpClientModule,
     BrowserAnimationsModule,
     MatListModule,
-    MatIconModule
+    MatIconModule,
+    MatButtonModule,
+    MatCardModule,
+    MatGridListModule,
+    MatTooltipModule
   ],
   providers: [
     CommercesService

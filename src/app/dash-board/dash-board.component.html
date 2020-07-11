@@ -1,12 +1,56 @@
 <div class="container">
-    <div class="row subline py-2">
-        <div class="col-12 col-md-6">Detalle</div>
+    <div class="row subline py-3">
+        <div class="col-12 col-md-6">
+            <div *ngIf="commerce">
+                <mat-card>
+                    <mat-card-title>{{commerce.name}}</mat-card-title>
+                    <mat-card-subtitle>{{commerce.owner}}</mat-card-subtitle>
+                    <mat-card-content>
+
+                        <div class="row">
+                            <div class="col-6">
+                                <mat-list role="list">
+                                    <mat-list-item role="listitem">
+                                        <mat-icon>bookmark_border</mat-icon><span matTooltip="Nit" matTooltipPosition="right">{{commerce.nit}}</span>
+                                    </mat-list-item>
+
+                                    <mat-list-item role="listitem">
+                                        <mat-icon>pin_drop</mat-icon><span matTooltip="Dirección" matTooltipPosition="right">{{commerce.address}}</span>
+                                    </mat-list-item>
+
+                                    <mat-list-item role="listitem">
+                                        <mat-icon>phone</mat-icon><span matTooltip="Teléfono" matTooltipPosition="right">{{commerce.phone}}</span>
+                                    </mat-list-item>
+                                </mat-list>
+                            </div>
+                            <div class="col-6">
+                                <mat-list role="list">
+                                    <mat-list-item role="listitem">
+                                        <mat-icon>access_time</mat-icon> <span matTooltip="Horario de atención" matTooltipPosition="right">{{commerce.schedule}}</span>
+                                    </mat-list-item>
+                                    <mat-list-item role="listitem">
+                                        <mat-icon>calendar_today</mat-icon> <span matTooltip="Dias de atención" matTooltipPosition="right">{{commerce.days}}</span>
+                                    </mat-list-item>
+                                    <mat-list-item role="listitem">
+                                        <mat-icon>bar_chart</mat-icon><span matTooltip="ventas" matTooltipPosition="right">{{commerce.sales}}</span>
+                                    </mat-list-item>
+                                </mat-list>
+                            </div>
+                        </div>
+
+
+                    </mat-card-content>
+
+                </mat-card>
+
+            </div>
+        </div>
         <div class="col-12 col-md-5">
             <div class="map" id="map">
             </div>
         </div>
     </div>
-    <div class="row py-2">
-            <app-seller [commerces]="commerces"></app-seller>
+    <div class="row">
+        <app-seller class="fv" [commerces]="commerces" (newCommerceOutput)="newcommerce($event)"></app-seller>
     </div>
 </div>

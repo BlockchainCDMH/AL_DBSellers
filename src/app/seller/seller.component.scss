@@ -1,4 +1,19 @@
-.mat-list-icon {
+.mat-list-icon{
     color: rgba(0, 0, 0, 0.54);
     transform: scale(2);
+  }
+  .list-title {
+    color: rgba(0, 0, 0, 0.54);
+  }
+
+
+  .mat-list-option{
+    transition: 0.2s ease all;
+    border-radius: 8px;
+    &:hover{
+      background-color: rgba($color: #AAAAAA, $alpha: 0.2);
+    }
+  }
+  .mat-list-option:hover .mat-list-icon{
+    color: rgba(90, 90, 200, 1);
   }
