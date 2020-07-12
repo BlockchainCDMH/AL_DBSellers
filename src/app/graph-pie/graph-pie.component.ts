@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { graph } from 'src/shared/graph';
 
 @Component({
   selector: 'app-graph-pie',
@@ -6,10 +7,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./graph-pie.component.scss']
 })
 export class GraphPieComponent implements OnInit {
-
+  @Input() graph: graph[];
+  
   constructor() { }
 
   ngOnInit(): void {
+    
   }
 
 }

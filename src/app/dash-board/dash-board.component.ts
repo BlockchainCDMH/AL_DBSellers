@@ -15,6 +15,7 @@ export class DashBoardComponent implements OnInit {
   commerces: commerces[]
   layer: layer[];
   graph: graph[];
+  
   map: Mapboxgl.map;
   commerce: commerces;
   constructor(private commercesservices:CommercesService) { }

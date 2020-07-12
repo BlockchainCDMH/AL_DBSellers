@@ -50,8 +50,7 @@
         </div>
     </div>
     <div class="row">
-        {{graph | json: 'pretty'}}
-        {{layer | json}}
+    <app-graph-pie [graph]="graph"></app-graph-pie>
     </div>
 
 </div>
