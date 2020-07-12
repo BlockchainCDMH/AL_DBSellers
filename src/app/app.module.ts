@@ -14,15 +14,17 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button'; 
 import {MatCardModule} from '@angular/material/card'; 
 import {MatGridListModule} from '@angular/material/grid-list';
-import {MatTooltipModule} from '@angular/material/tooltip'; 
-
+import {MatTooltipModule} from '@angular/material/tooltip';
+import { GraphPieComponent } from './graph-pie/graph-pie.component'; 
+import {MatButtonToggleModule} from '@angular/material/button-toggle'; 
 @NgModule({
   declarations: [
     AppComponent,
     DashBoardComponent,
     SellerComponent,
     FooterComponent,
-    HeaderComponent
+    HeaderComponent,
+    GraphPieComponent
   ],
   imports: [
     BrowserModule,
@@ -33,7 +35,8 @@ import {MatTooltipModule} from '@angular/material/tooltip';
     MatButtonModule,
     MatCardModule,
     MatGridListModule,
-    MatTooltipModule
+    MatTooltipModule,
+    MatButtonToggleModule
   ],
   providers: [
     CommercesService

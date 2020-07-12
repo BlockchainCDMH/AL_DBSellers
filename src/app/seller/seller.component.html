@@ -1,10 +1,17 @@
 <mat-selection-list [multiple]="false">
-  <mat-list-option  *ngFor="let commerce of commerces" (click)="cliked(commerce)">
-    <mat-icon mat-list-icon class="mat-list-icon">home</mat-icon>
-    <div class="list-title" mat-line>{{commerce.name}} </div>
-    <div class="list-title" mat-line>
-      <h3 matLine><small>{{commerce.owner}}</small></h3>
-    </div>
-  </mat-list-option>
+  <mat-grid-list cols="4" rowHeight="4:1">
+    <mat-grid-tile *ngFor="let commerce of commerces" [class.card-selected]="selected==commerce.id">
+      <mat-list-option id="{{commerce.id}}" (click)="cliked(commerce)" >
+        <mat-icon mat-list-icon class="mat-list-icon">home</mat-icon>
+        <div class="list-title" mat-line>{{commerce.name}} </div>
+        <div class="list-title" mat-line>
+          <h3 matLine><small>{{commerce.owner}}</small></h3>
+        </div>
+      </mat-list-option>
+    </mat-grid-tile>
+  </mat-grid-list>
 </mat-selection-list>
+
+
+
 

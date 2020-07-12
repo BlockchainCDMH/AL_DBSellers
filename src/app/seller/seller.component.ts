@@ -9,6 +9,7 @@ import { commerces } from 'src/shared/commerces';
 export class SellerComponent implements OnInit {
   @Input() commerces: commerces[];
   @Output() newCommerceOutput = new EventEmitter<commerces>();
+  selected=-1;
   constructor() { }
 
   ngOnInit(): void {
@@ -16,6 +17,11 @@ export class SellerComponent implements OnInit {
 
   cliked(value: commerces) {
     this.newCommerceOutput.emit(value);
+    this.selected=value.id;
+  }
+
+  selection(id:number):boolean{
+    return false;
   }
 
 }

@@ -3,6 +3,8 @@ import * as Mapboxgl from 'mapbox-gl';
 import { environment } from 'src/environments/environment';
 import {CommercesService} from '../services/commerces.service';
 import { commerces } from 'src/shared/commerces';
+import { graph } from 'src/shared/graph';
+import { layer } from 'src/shared/layer';
 @Component({
   selector: 'app-dash-board',
   templateUrl: './dash-board.component.html',
@@ -11,6 +13,8 @@ import { commerces } from 'src/shared/commerces';
 
 export class DashBoardComponent implements OnInit {
   commerces: commerces[]
+  layer: layer[];
+  graph: graph[];
   map: Mapboxgl.map;
   commerce: commerces;
   constructor(private commercesservices:CommercesService) { }
@@ -26,6 +30,8 @@ export class DashBoardComponent implements OnInit {
       });
 
       this.getCommerces();
+      this.getlayer();
+      this.getgraph();
   }
 
   
@@ -36,8 +42,22 @@ export class DashBoardComponent implements OnInit {
       }
     })
   }
+  getlayer() {
+    return this.commercesservices.getCommercesLayer().subscribe(response => {
+      if (response !== null) {
+        this.layer = response;
+      }
+    })
+  }
+  getgraph() {
+    return this.commercesservices.getgraph().subscribe(response => {
+      if (response !== null) {
+        this.graph = response;
+      }
+    })
+  }
 
-  newcommerce(id){
+  drawCommerce(id){
     this.commerce=id;
   }
 
