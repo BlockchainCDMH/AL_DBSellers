@@ -9,7 +9,6 @@
                     <mat-card-title>{{commerce.name}}</mat-card-title>
                     <mat-card-subtitle>{{commerce.owner}}</mat-card-subtitle>
                     <mat-card-content>
-
                         <div class="row">
                             <div class="col-6">
                                 <mat-list role="list">
@@ -50,7 +49,12 @@
         </div>
     </div>
     <div class="row">
-    <app-graph-pie [graph]="graph"></app-graph-pie>
+        <div class="col-6 align-content-center">
+            <app-graph-pie *ngIf="graph" [graph]="graph"></app-graph-pie>
+        </div>
+        <div class="col-6 align-content-center">
+            <app-graph-bar *ngIf="graph" [graph]="graph"></app-graph-bar>
+        </div>
     </div>
 
 </div>

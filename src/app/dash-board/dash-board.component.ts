@@ -60,6 +60,10 @@ export class DashBoardComponent implements OnInit {
 
   drawCommerce(id){
     this.commerce=id;
+    console.log(this.layer)
+  /*   var marker = new Mapboxgl.Marker()
+    .setLngLat([12.550343, 55.665957])
+    .addTo(this.map); */
   }
 
 }
