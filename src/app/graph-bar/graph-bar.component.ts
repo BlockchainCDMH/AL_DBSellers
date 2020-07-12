@@ -50,15 +50,15 @@ export class GraphBarComponent implements OnInit {
           series: {
               borderWidth: 0,
               dataLabels: {
-                  enabled: true,
-                  format: '{point.y:.1f}%'
+                  enabled: false,
+                  format: '{point.y}'
               }
           }
       },
   
       tooltip: {
           headerFormat: '<span style="font-size:11px">{series.name}</span><br>',
-          pointFormat: '<span style="color:{point.color}">{point.name}</span>: <b>{point.y:.2f}%</b> of total<br/>'
+          pointFormat: '<span style="color:{point.color}">{point.name}</span>: <b>$ {point.y}</b> <br/>'
       },
   
       series: [
@@ -327,11 +327,11 @@ export class GraphBarComponent implements OnInit {
   };
   for (let i = 0; i < this.graph.length; i++) {
     this.chartOptions["series"][0]["data"][i]["name"]=this.graph[i]["name"];
-/*     if (i==0) {
+    if (i==0) {
       this.chartOptions["series"][0]["data"][i]["y"]=+this.graph[i]["sales"];
     }else{
       this.chartOptions["series"][0]["data"][i]["y"]=+this.graph[i]["y"];
-    } */
+    }
     
   
   }
